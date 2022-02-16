@@ -3,12 +3,12 @@ const app = express()
 const requestTime = require('./middleware/request')
 
 //use request time middleware
-
+app.use(requestTime)
 
 //setting ejs view engine
 app.set('view engine', 'ejs')
 
-app.get('/', requestTime, (req, res)=>{
+app.get('/', (req, res)=>{
     res.render('index')
 })
 
